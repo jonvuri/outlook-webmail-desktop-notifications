@@ -30,10 +30,10 @@
                         })
 
                         if (!notificationsEqual(notifications, lastNotifications)) {
+                            
+                            lastNotifications = notifications.slice()
 
                             window.postMessage({ type: 'notification', notifications: notifications }, '*')
-
-                            lastNotifications = notifications.slice()
 
                         }
 
